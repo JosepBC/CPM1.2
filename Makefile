@@ -9,11 +9,11 @@ BUILD_FOLDER = build
 
 all : $(PAR)
 	@mkdir -p $(BUILD_FOLDER)
-	@$(CC) -O3 $(PAR) $(CFLAGS) -lm -o $(BUILD_FOLDER)/$(BIN).out
+	@$(CC) -O3 $(PAR) $(CFLAGS) -o $(BUILD_FOLDER)/$(BIN).out
 
 serial :
 	@mkdir -p $(BUILD_FOLDER)
-	@$(CC) -O3 $(SER) $(CFLAGS) -lm -o $(BUILD_FOLDER)/serial.out
+	@$(CC) -O3 $(SER) $(CFLAGS) -o $(BUILD_FOLDER)/serial.out
 
 clean : 
 	@rm -rf $(BUILD_FOLDER)/$(BIN).out
