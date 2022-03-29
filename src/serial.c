@@ -33,7 +33,7 @@ int puc_posar(int x, int y, int z) {
     
     for (i = 0; i < 3; i++)
         for (j = 0; j < 3; j++)
-    	    if (taula[pi+i][pj+j] == z) return FALS;
+    	    if (taula[pi + i][pj + j] == z) return FALS;
 
     return CERT;
 }
@@ -44,15 +44,15 @@ int recorrer(int i, int j) {
     long int s = 0;
 
     if (taula[i][j]) { //Valor fixe no s'ha d'iterar
-        if (j < 8) return(recorrer(i, j+1));
-        else if (i < 8) return(recorrer(i+1, 0));
+        if (j < 8) return(recorrer(i, j + 1));
+        else if (i < 8) return(recorrer(i + 1, 0));
         else return 1; // Final de la taula
     } else { // hi ha un 0 hem de provar 
         for (k = 1; k < 10; k++) {
             if (puc_posar(i, j, k)) {
                 taula[i][j]= k; 
-	            if (j < 8) s += recorrer(i, j+1);
-	            else if (i < 8) s += recorrer(i+1, 0);
+	            if (j < 8) s += recorrer(i, j + 1);
+	            else if (i < 8) s += recorrer(i + 1, 0);
 	            else s++;
                 taula[i][j]= 0;
             }
@@ -64,10 +64,15 @@ int recorrer(int i, int j) {
 
 ////////////////////////////////////////////////////////////////////
 int main() {
-    int i,j,k;
     long int nsol;
 
     nsol = recorrer(0,0);
-    printf("numero solucions : %ld\n",nsol);
-    exit(0);
+    if (nsol == 54474240) {
+        printf("Nsol ok");
+        exit(0);
+    } else {
+        printf("Bad Nsol: %ld\n", nsol);
+        exit(1);
+    }
+
 }
