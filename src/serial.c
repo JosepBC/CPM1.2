@@ -68,7 +68,7 @@ int main() {
 
     nsol = recorrer(0,0);
     if (nsol == 54474240) {
-        printf("Nsol ok");
+        printf("Nsol ok\n");
         exit(0);
     } else {
         printf("Bad Nsol: %ld\n", nsol);
