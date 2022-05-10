@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for file in ../out/teen/*
+for file in ../out/orca/*
 do
     file_name=$(basename $file | cut -f 1 -d .)
     time=$(grep real $file | cut -f 2 -d ' ')
