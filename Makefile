@@ -1,5 +1,5 @@
 CC = gcc
-PAR = src/sudokuCPM_P2.c
+PAR = src/paralel.c
 SER = src/serial.c
 BIN = par
 CFLAGS = -fopenmp -g
